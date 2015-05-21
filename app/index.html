@@ -1,44 +1,35 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Práctica validación formularios</title>
+    <title>futbolistas</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body>
+</head>
 
-    <div class="hero-unit">
-      <h1>Práctica validación formularios</h1>
-   
+<body>
     <div class="container">
-    <div id="errores" name="errores" class= "offset-col " ></div>
+        <div id="errores" name="errores"></div>
         <form class="form-horizontal " novalidate id="frmalta">
             <div class="form-group">
                 <label for="nombre" class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Introduce tu nombre">
                 </div>
-            </div>
-             <div class="form-group">
-                <label for="banco" class="col-sm-2 control-label">introduce tu cuenta bancaria</label>
+                <label for="apellido" class="col-sm-2 control-label">Apellido</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="cuenta" name="cuenta" required placeholder="Introduce tu nombre">
-                </div>
-            </div>
-             <div class="form-group">
-                <label for="nif" class="col-sm-2 control-label">introduce tu DNI</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="nif" name="nif" required placeholder="Introduce tu nombre">
+                    <input type="text" class="form-control" id="apellido" name="apellido" required placeholder="Introduce tu apellido">
                 </div>
             </div>
             <div class="form-group">
@@ -46,11 +37,42 @@
                 <div class="col-sm-4">
                     <input type="text" class=" email form-control" id="email" name="email" placeholder="Introduce tu email">
                 </div>
-            </div>
-            <div class="form-group">
                 <label for="email2" class="col-sm-2 control-label">Email ¡otra vez!</label>
                 <div class="col-sm-4">
                     <input type="text" class=" email form-control" id="email2" name="email2" placeholder="Introduce otra vez tu email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Introduce tu telefono">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-group">
+                <label for="Demandante">Demandante</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked> Particular
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"> Empresa
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nif" class="col-sm-2 control-label"> NIF</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="nif" name="nif" required placeholder="Introduce tu NIF">
+                </div>
+            </div>
+             <div class="form-group">
+                <label for="CIF" class="col-sm-2 control-label">CIF</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="CIF" name="CIF" placeholder="Introduce tu CIF">
                 </div>
             </div>
             <div class="form-group">
@@ -66,6 +88,12 @@
                 </div>
             </div>
             <div class="form-group">
+                <label for="banco" class="col-sm-2 control-label">introduce tu cuenta bancaria</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="cuenta" name="cuenta" required placeholder="Introduce tu nombre">
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="url" class="col-sm-2 control-label">Comentarios</label>
                 <div class="col-sm-4">
                     <textarea class="form-control" rows="4" id="comentarios" name="comentarios" placeholder="Escribe lo que quieras contarnos"></textarea>
@@ -78,25 +106,31 @@
             </div>
         </form>
     </div>
-
-
-
-
-
-
-      <p>Aquí debería ir el enlace a <a href="https://github.com/HectorAnd/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
-    </div>
-
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js(.) scripts/plugins.js -->
+    <script src="bower_components/bootstrap/js/affix.js"></script>
+    <script src="bower_components/bootstrap/js/alert.js"></script>
+    <script src="bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="bower_components/bootstrap/js/modal.js"></script>
+    <script src="bower_components/bootstrap/js/transition.js"></script>
+    <script src="bower_components/bootstrap/js/button.js"></script>
+    <script src="bower_components/bootstrap/js/popover.js"></script>
+    <script src="bower_components/bootstrap/js/carousel.js"></script>
+    <script src="bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="bower_components/bootstrap/js/collapse.js"></script>
+    <script src="bower_components/bootstrap/js/tab.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/alta.js -->
+    <script src="scripts/alta.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>
