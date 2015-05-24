@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>futbolistas</title>
+    <title>Validacion de formularios</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -20,7 +20,8 @@
 
 <body>
     <div class="container">
-        <div id="errores" name="errores"></div>
+        <h1 class="text-center">formulario de contacto</h1>
+        <div id="errores"></div>
         <form class="form-horizontal " novalidate id="frmalta">
             <div class="form-group">
                 <label for="nombre" class="col-sm-2 control-label">Nombre</label>
@@ -50,16 +51,51 @@
             </div>
             <div class="form-group">
                 <div class="control-group">
-                <label for="Demandante">Demandante</label>
+                    <label class="col-sm-2 control-label">¿Como nos ha conocido?</label>
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked> Particular
-                        </label>
+                        <div class="col-sm-4">
+                            <label>
+                                <input type="radio" name="conocido" id="nocontesto" value="nocontesto" checked> Prefiero no contestar
+                            </label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="conocido" id="publicidad" value="publicidad"> Publicidad
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="conocido" id="profesionales" value="profesionales"> Profesionales del sector
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="conocido" id="internet" value="internet"> Internet
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="conocido" id="amigo" value="amigo"> A traves de un amigo o conocido
+                                </label>
+                            </div>
+
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-group">
+                    <label class="col-sm-2 control-label">Demandante</label>
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"> Empresa
-                        </label>
+                        <div class="col-sm-4">
+                            <label>
+                                <input type="radio" name="demandante" id="particular" value="particular" checked> Particular
+                            </label>
+
+                            <label>
+                                <input type="radio" name="demandante" id="empresa" value="empresa"> Empresa
+                            </label>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +105,7 @@
                     <input type="text" class="form-control" id="nif" name="nif" required placeholder="Introduce tu NIF">
                 </div>
             </div>
-             <div class="form-group">
+            <div class="form-group">
                 <label for="CIF" class="col-sm-2 control-label">CIF</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="CIF" name="CIF" placeholder="Introduce tu CIF">
@@ -88,9 +124,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="banco" class="col-sm-2 control-label">introduce tu cuenta bancaria</label>
+                <label for="cuenta" class="col-sm-2 control-label">introduce tu cuenta bancaria</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="cuenta" name="cuenta" required placeholder="Introduce tu nombre">
+                    <input type="text" class="form-control" id="cuenta" name="cuenta" required placeholder="Introduce tu cuenta">
                 </div>
             </div>
             <div class="form-group">
