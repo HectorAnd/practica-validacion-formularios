@@ -33,10 +33,6 @@ label.error {
     font-size: 12px;
 }
 
-textarea {
-    resize: none;
-}
-
 .radio label {
     padding-right: 40px;
 }
