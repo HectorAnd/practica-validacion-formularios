@@ -22,9 +22,9 @@
     <div class="container">
         <h1 class="text-center">formulario de contacto</h1>
         <div id="errores"></div>
-        <form class="form-horizontal " novalidate id="frmalta">
-            <fieldset>
-            <legend> datos de contacto</legend>
+        <form class="form-horizontal " novalidate action="index.html" id="frmalta">
+            <fieldset class="cabecera">
+            <legend class="cabecera"> datos de contacto</legend>
             <div class="form-group">
                 <label for="nombre" class="col-sm-2 control-label">Nombre</label>
                 <div class="col-sm-4">
@@ -86,6 +86,9 @@
             </div>
            
         </fieldset>
+
+            <fieldset class="cabecera">
+            <legend class="cabecera"> Datos de facturacion</legend>
             <div class="form-group">
                 <div class="control-group">
                     <label class="col-sm-2 control-label">Demandante</label>
@@ -103,29 +106,19 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="nombre2" class="col-sm-2 control-label">Nombre</label>
+            <div class="form-group" >
+                <label for="nombre2" class="col-sm-2 control-label" name="name" id="name">Nombre</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="nombre2" name="nombre2" placeholder="Introduce tu nombre">
                 </div>
 
 
-                <label for="nif" class="col-sm-2 control-label"> NIF</label>
+                <label for="nif" class="col-sm-2 control-label" name="documento" id="documento"> NIF</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="nif" name="nif" required placeholder="Introduce tu NIF">
                 </div>
             </div>
-            <div class="form-group">
-
-                <label for="nempresa" class="col-sm-2 control-label">Empresa</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="nempresa" name="nempresa" placeholder="Introduce el nombre de la empresa">
-                </div>
-                <label for="CIF" class="col-sm-2 control-label">CIF</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-control" id="CIF" name="CIF" placeholder="Introduce tu CIF">
-                </div>
-            </div>
+   
             <div class="form-group">
                 <label for="direccion" class="col-sm-2 control-label">Direcccion</label>
                 <div class="col-sm-4">
@@ -163,6 +156,10 @@
                     <input type="text" class="form-control" id="cuenta" name="cuenta" required placeholder="Introduce tu cuenta">
                 </div>
             </div>
+            </fieldset>
+            <fieldset class="cabecera">
+            <legend class="cabecera"> Datos de Acceso</legend>
+
             <div class="form-group">
                 <label for="usuario" class="col-sm-2 control-label">Usuario</label>
                 <div class="col-sm-4">
@@ -186,6 +183,7 @@
                     <button type="submit" class="btn btn-primary">Dar de alta</button>
                 </div>
             </div>
+            </fieldset>
              
         </form>
     </div>

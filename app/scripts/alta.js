@@ -6,16 +6,17 @@ $(document).ready(function() {
                 required: true
 
             },
-            apellido:{
+            apellido: {
 
-                required:true
+                required: true
             },
-            nif:{
-                nifES:true
+            nif: {
+                nifES: true,
+                cifES: true
 
             },
-            
-            telefono:{
+
+            telefono: {
                 required: true,
                 digits: true,
                 minlength: 9,
@@ -31,23 +32,64 @@ $(document).ready(function() {
                 equalTo: '#email'
             },
 
-            comentarios: {  
+            direccion: {
                 required: true
             },
 
-            url: {
-                url: true
+            nombre2: {
+                required: true
             },
-            edad: {
-                min:0,
-                max:110
+            CP: {
+               required: true,
+               digits: true,
+               maxlength: 5
+
+            },
+            localidad: {
+               required: true
+            },
+            provincia: {
+               required: true
+            },
+            pais: {
+               required: true
+            },
+            cuenta: {
+               required: true
+            },
+            usuario: {
+               required: true
+            },
+            pass: {
+               required: true
+            },
+            pass2: {
+               equalTo:'#pass'
             }
+
+
+
+
         }
-        
+
     });
 });
 $(document).ready(function() {
-    $
+
+    $('#particular').change(function(evento) {
+       
+        $('#name').text( 'Nombre');
+        $('#documento').text('NIF')
+      
+    });
+
+
+    $('#empresa').change(function(evento) {
+       
+        $('#name').text( 'Empresa');
+        $('#documento').text('CIF')
+      
+    });
 
 
 });
