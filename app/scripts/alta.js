@@ -1,5 +1,55 @@
 'use strict';
+
+
+
+
 $(document).ready(function() {
+    $('#nombre , #apellido').change(function(evento){
+        var texto = "";
+       texto= $('#nombre').val()+ " " +$('#apellido').val();
+       $('#nombre2').val(texto);
+    });
+
+    $('#particular').change(function(evento) {
+       
+        $('#name').text( 'Nombre');
+        $('#documento').text('NIF');
+          $('#cif').attr({
+            name:'nif',
+            id: 'nif'
+        });
+        var texto = "";
+       texto= $('#nombre').val()+ " " +$('#apellido').val();
+       $('#nombre2').val(texto);
+      
+    });
+    $('#CP').focusout(function(evento){
+        if($('#CP').val().length()===4){
+            var text =0 + $('#CP').val();
+            $('#CP').val(text);
+
+        }
+    });
+
+
+    $('#empresa').change(function(evento) {
+       
+        $('#name').text( 'Empresa');
+        $('#documento').text('CIF');
+        var texto="";
+        $('#nombre2').val(texto);
+        $('#nif').attr({
+            name:'cif',
+            id: 'cif'
+        });
+        
+    });
+
+
+});
+
+$(document).ready(function() {
+   
     $('#frmalta').validate({
         rules: {
             nombre: {
@@ -11,9 +61,12 @@ $(document).ready(function() {
                 required: true
             },
             nif: {
-                nifES: true,
-                cifES: true
-
+                required:true,
+                nifES:true
+            },
+            cif: {
+                required:true,
+                cifES:true
             },
 
             telefono: {
@@ -55,10 +108,12 @@ $(document).ready(function() {
                required: true
             },
             cuenta: {
-               required: true
+               required: true,
+               iban:true
             },
             usuario: {
-               required: true
+               required: true,
+               minlength: 4
             },
             pass: {
                required: true
@@ -67,29 +122,8 @@ $(document).ready(function() {
                equalTo:'#pass'
             }
 
-
-
-
         }
 
     });
 });
-$(document).ready(function() {
 
-    $('#particular').change(function(evento) {
-       
-        $('#name').text( 'Nombre');
-        $('#documento').text('NIF')
-      
-    });
-
-
-    $('#empresa').change(function(evento) {
-       
-        $('#name').text( 'Empresa');
-        $('#documento').text('CIF')
-      
-    });
-
-
-});
