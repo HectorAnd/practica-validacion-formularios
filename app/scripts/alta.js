@@ -79,6 +79,7 @@ $(document).ready(function() {
             email: {
                 email: true,
                 required: true,
+                remote:'http://localhost/validarphp/validar_email_db.php'
 
             },
             email2: {
