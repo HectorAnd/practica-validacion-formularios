@@ -4,52 +4,63 @@
 
 
 $(document).ready(function() {
-    $('#nombre , #apellido').change(function(evento){
+    $('#nombre , #apellido').change(function(evento) {
         var texto = "";
-       texto= $('#nombre').val()+ " " +$('#apellido').val();
-       $('#nombre2').val(texto);
+        texto = $('#nombre').val() + " " + $('#apellido').val();
+        $('#nombre2').val(texto);
     });
 
     $('#particular').change(function(evento) {
-       
-        $('#name').text( 'Nombre');
+
+        $('#name').text('Nombre');
         $('#documento').text('NIF');
-          $('#cif').attr({
-            name:'nif',
+        $("#frmalta").validate().resetForm();
+        $('#cif').attr({
+            name: 'nif',
             id: 'nif'
         });
-        var texto = "";
-       texto= $('#nombre').val()+ " " +$('#apellido').val();
-       $('#nombre2').val(texto);
-      
-    });
-    $('#CP').focusout(function(evento){
-        if($('#CP').val().length()===4){
-            var text =0 + $('#CP').val();
-            $('#CP').val(text);
+     var texto = "";
+        texto = $('#nombre').val() + " " + $('#apellido').val();
+        $('#nombre2').val(texto);
 
+
+
+    });
+
+     $("#CP").focusout(function() {
+        var cp= $("#CP").val();
+        var ceros=""
+   
+        if (cp.length <5){
+          for (var i = cp.length; i < 5; i++) {
+                ceros += "0";
+            };
         }
+        cp=ceros + cp;
+        $("#CP").val(cp);
     });
 
 
     $('#empresa').change(function(evento) {
-       
-        $('#name').text( 'Empresa');
+
+        $('#name').text('Empresa');
         $('#documento').text('CIF');
-        var texto="";
+        var texto = "";
         $('#nombre2').val(texto);
+        $("#frmalta").validate().resetForm();
         $('#nif').attr({
-            name:'cif',
+            name: 'cif',
             id: 'cif'
         });
-        
+        $('#nombre2').val(texto);
+
     });
 
 
 });
 
 $(document).ready(function() {
-   
+
     $('#frmalta').validate({
         rules: {
             nombre: {
@@ -61,12 +72,13 @@ $(document).ready(function() {
                 required: true
             },
             nif: {
-                required:true,
-                nifES:true
+                required: true,
+                nifES: true,
+                remote: 'http://localhost/validarphp/validar_nif_db.php'
             },
             cif: {
-                required:true,
-                cifES:true
+                required: true,
+                cifES: true
             },
 
             telefono: {
@@ -79,7 +91,7 @@ $(document).ready(function() {
             email: {
                 email: true,
                 required: true,
-                remote:'http://localhost/validarphp/validar_email_db.php'
+                remote: 'http://localhost/validarphp/validar_email_db.php'
 
             },
             email2: {
@@ -94,37 +106,36 @@ $(document).ready(function() {
                 required: true
             },
             CP: {
-               required: true,
-               digits: true,
-               maxlength: 5
+                required: true,
+                digits: true,
+                maxlength: 5
 
             },
             localidad: {
-               required: true
+                required: true
             },
             provincia: {
-               required: true
+                required: true
             },
             pais: {
-               required: true
+                required: true
             },
             cuenta: {
-               required: true,
-               iban:true
+                required: true,
+                iban: true
             },
             usuario: {
-               required: true,
-               minlength: 4
+                required: true,
+                minlength: 4
             },
             pass: {
-               required: true
+                required: true
             },
             pass2: {
-               equalTo:'#pass'
+                equalTo: '#pass'
             }
 
         }
 
     });
 });
-
