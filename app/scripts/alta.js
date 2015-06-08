@@ -10,6 +10,15 @@ $(document).ready(function() {
         $('#nombre2').val(texto);
     });
 
+ $('#email').change(function(evento) {
+        var texto = "";
+        texto = $('#email').val() 
+        $('#usuario').val(texto);
+    });
+
+
+
+
     $('#particular').change(function(evento) {
 
         $('#name').text('Nombre');
