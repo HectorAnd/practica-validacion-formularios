@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';*/
 
 
 
@@ -47,6 +47,25 @@ $(document).ready(function() {
         }
         cp=ceros + cp;
         $("#CP").val(cp);
+ var dato = $("#CP").val();
+     $.ajax({
+                 type: "POST",
+                 dataType: "json",
+                 url: "http://localhost/validarphp/validar_zip_db.php",
+                 data: {
+                     zip: dato
+                 },
+                 success: function(msg) {
+                     $("#provincia").val(msg);
+                 }
+             });
+
+
+
+
+
+
+
     });
 
 
