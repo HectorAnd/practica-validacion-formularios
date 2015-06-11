@@ -56,7 +56,9 @@ $(document).ready(function() {
                      zip: dato
                  },
                  success: function(msg) {
-                     $("#provincia").val(msg);
+                    
+                    
+                     $("#provincia").val(msg[0].provincia);
                  }
              });
 
