@@ -10,9 +10,9 @@ $(document).ready(function() {
         $('#nombre2').val(texto);
     });
 
- $('#email').change(function(evento) {
+    $('#email').change(function(evento) {
         var texto = "";
-        texto = $('#email').val() 
+        texto = $('#email').val()
         $('#usuario').val(texto);
     });
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
             name: 'nif',
             id: 'nif'
         });
-     var texto = "";
+        var texto = "";
         texto = $('#nombre').val() + " " + $('#apellido').val();
         $('#nombre2').val(texto);
 
@@ -36,39 +36,45 @@ $(document).ready(function() {
 
     });
 
-     $("#CP").focusout(function() {
-        var cp= $("#CP").val();
-        var ceros=""
-   
-        if (cp.length <5){
-          for (var i = cp.length; i < 5; i++) {
+    $("#CP").focusout(function() {
+        var cp = $("#CP").val();
+        var ceros = ""
+
+        if (cp.length < 5) {
+            for (var i = cp.length; i < 5; i++) {
                 ceros += "0";
             };
         }
-        cp=ceros + cp;
+        cp = ceros + cp;
         $("#CP").val(cp);
- var dato = $("#CP").val();
-     $.ajax({
-                 type: "POST",
-                 dataType: "json",
-                 url: "http://localhost/validarphp/validar_zip_db.php",
-                 data: {
-                     zip: dato
-                 },
-                 success: function(msg) {
-                    
-                    
-                     $("#provincia").val(msg[0].provincia);
-                 }
-             });
+        var dato = $("#CP").val();
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "http://localhost/validarphp/validar_zip_db.php",
+            data: {
+                zip: dato
+            },
+            success: function(msg) {
 
 
+                $("#provincia").val(msg[0].provincia);
+            }
+        });
 
 
-
-
+        $.ajax({
+            url: "http://localhost/validarphp/localidad.php",
+            type: "POST",
+            data: "zip=" + $("#CP").val(),
+            success: function(opciones) {
+                $("#localidad").html(opciones);
+            }
+        });
 
     });
+
+
 
 
     $('#empresa').change(function(evento) {
