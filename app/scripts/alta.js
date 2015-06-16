@@ -51,7 +51,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "http://localhost/validarphp/validar_zip_db.php",
+            url: "/php/validar_zip_db.php",
             data: {
                 zip: dato
             },
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
 
         $.ajax({
-            url: "http://localhost/validarphp/localidad.php",
+            url: "/php/localidad.php",
             type: "POST",
             data: "zip=" + $("#CP").val(),
             success: function(opciones) {
@@ -110,7 +110,7 @@ $(document).ready(function() {
             nif: {
                 required: true,
                 nifES: true,
-                remote: 'http://localhost/validarphp/validar_nif_db.php'
+                remote: '/php/validar_nif_db.php'
             },
             cif: {
                 required: true,
@@ -127,7 +127,7 @@ $(document).ready(function() {
             email: {
                 email: true,
                 required: true,
-                remote: 'http://localhost/validarphp/validar_email_db.php'
+                remote: '/php/validar_email_db.php'
 
             },
             email2: {
