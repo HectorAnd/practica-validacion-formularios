@@ -183,9 +183,14 @@
                 </div>
                 <div class="form-group">
                     <label for="pass" class="col-sm-2 control-label">Contraseña</label>
-                    <div class="col-sm-4">
-                        <input type="password" class="form-control" id="pass" name="pass" required placeholder="Contraseña">
-                    </div>
+                    <div id="complexify" class="col-sm-4">
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Escriba password" passField="true">
+                            <div class="progress">
+                                <div id="complexity-bar" class="progress-bar" role="progressbar">
+                                </div>
+                            </div>
+                            <h4 id="complexity" class="pull-right">0%</h4>
+                        </div>
                 </div>
                 <div class="form-group">
                     <label for="cuenta" class="col-sm-2 control-label">Repite la contraseña</label>
@@ -207,6 +212,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/complexion/lib/complexion.js"></script>
+    <script src="bower_components/jquery.complexify.js/jquery.complexify.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js(.) scripts/plugins.js -->
@@ -226,6 +233,7 @@
     <!-- build:js({app,.tmp}) scripts/alta.js -->
     <script src="scripts/alta.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/jquery.complexify.js"></script>
     <!-- endbuild -->
 </body>
 

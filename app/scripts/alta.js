@@ -36,6 +36,23 @@ $(document).ready(function() {
 
     });
 
+ //verifica la seguridad de la passsword con plugin complexify
+    $('#complexify #pass').complexify({}, function(valid, complexity) {
+        var progressBar = $('#complexify #complexity-bar');
+
+        progressBar.toggleClass('progress-bar-success', valid);
+        progressBar.toggleClass('progress-bar-danger', !valid);
+        progressBar.css({
+            'width': complexity + '%'
+        });
+
+        $('#complexify #complexity').text(Math.round(complexity) + '%');
+    });
+
+
+
+    
+
     $("#CP").focusout(function() {
         var cp = $("#CP").val();
         var ceros = ""
